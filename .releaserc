@@ -1,0 +1,18 @@
+{
+  "tagFormat": "v${version}",
+  "repositoryUrl": "https://github.com/thibaultserti/fastapi-observability-example.git",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    ["@semantic-release/exec", {
+      "generateNotesCmd": "sed -i 's/version = \"[^\"]*\"/version = \"${nextRelease.version}\"/' pyproject.toml"
+    }],
+    ["@semantic-release/git", {
+      "assets": ["CHANGELOG.md", "pyproject.toml"],
+      "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes} [skip ci]"
+    }],
+    "@semantic-release/github"
+  ],
+  "branches": "main"
+}

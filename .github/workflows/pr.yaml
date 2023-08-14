@@ -1,0 +1,24 @@
+---
+name: Pull Request
+on:
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.txt'
+
+jobs:
+  docker-build:
+    uses: thibaultserti/gh-actions-reusable-workflows/.github/workflows/run-docker-build.yaml@main
+  docker-release:
+    uses: thibaultserti/gh-actions-reusable-workflows/.github/workflows/push-docker-release.yaml@main
+    needs: docker-build
+    permissions:
+      id-token: write # This is required for requesting the JWT
+      packages: write
+    with:
+      release: latest
+      use-prebuilt-image: true
+      enable-signing: true
+      platforms: "linux/amd64,linux/arm64/v8"
