@@ -1,6 +1,6 @@
 {
   "tagFormat": "v${version}",
-  "repositoryUrl": "https://github.com/thibaultserti/fastapi-observability-example.git",
+  "repositoryUrl": "https://github.com/thibaultserti/fastapi-profiling-example.git",
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
