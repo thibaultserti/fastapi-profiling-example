@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/thibaultserti/fastapi-profiling-example/compare/v1.0.0...v1.1.0) (2023-08-14)
+
+
+### Features
+
+* downgrade to python3.10 ([8a109c8](https://github.com/thibaultserti/fastapi-profiling-example/commit/8a109c84c65928680defd81924b851730ec12e3a))
+
 # 1.0.0 (2023-08-14)
 
 
